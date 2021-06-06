@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Copy 0 source folders to &apos;Interview_Programs&apos;&#x0D;&#x0A;- Destination element: &apos;Interview_Programs&apos;" description="Copy source folders" destination="=Interview_Programs" flags="6" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyRoots" roots="0" stamp="1621523640405" version="1.0"/>&#x0A;<refactoring comment="Delete resource &apos;interviewQuesrionsJava&apos;" deleteContents="true" description="Delete resource &apos;interviewQuesrionsJava&apos;" element1="/interviewQuesrionsJava" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1621523787224"/>
+</session>
