@@ -1,0 +1,13 @@
+/.idea/
+*.iml
+/target/
+/lib
+/build/
+/.gradle/
+/bin
+.classpath
+.project
+.settings
+target_json/
+out/
+.allure/
