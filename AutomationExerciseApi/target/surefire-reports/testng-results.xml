@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Account Created Successfully]]>
+    </line>
+    <line>
+      <![CDATA[Account Updated Successfully]]>
+    </line>
+    <line>
+      <![CDATA[Account Deleted Successfully]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2022-06-24T00:45:00 IST" name="Suite" finished-at="2022-06-24T00:45:08 IST" duration-ms="7203">
+    <groups>
+    </groups>
+    <test started-at="2022-06-24T00:45:00 IST" name="Test" finished-at="2022-06-24T00:45:08 IST" duration-ms="7203">
+      <class name="com.automationexercise.specification.TestCasesForApi">
+        <test-method signature="createAccount(java.util.Map)[pri:0, instance:com.automationexercise.specification.TestCasesForApi@22fcf7ab]" started-at="2022-06-24T00:45:01 IST" name="createAccount" data-provider="getFormParamsMap" finished-at="2022-06-24T00:45:06 IST" duration-ms="5381" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{country=Jersey, firstname=Irving, address2=Geraldo Circle, city=North Mica, address1=70719 Dion Gardens, birth_month=1, birth_date=2, title=Mrs, lastname=Trantow, birth_year=8338, zipcode=90702-5945, password=testuser, name=Irving, company=abc, state=New Hampshire, mobile_number=1-432-852-3849, email=Irving6@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Account Created Successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- createAccount -->
+        <test-method signature="updateAccount(java.util.Map)[pri:1, instance:com.automationexercise.specification.TestCasesForApi@22fcf7ab]" started-at="2022-06-24T00:45:06 IST" name="updateAccount" data-provider="getUpdateFormParamsMap" finished-at="2022-06-24T00:45:07 IST" duration-ms="967" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{country=United Arab Emirates, firstname=Irving, address2=Douglas Cove, city=Lake Robinstad, address1=718 Legros Station, birth_month=6, birth_date=7, title=Mrs, lastname=Trantow, birth_year=2861, zipcode=81996-7000, password=testuser, name=Irving, company=abc, state=West Virginia, mobile_number=1-964-411-4585, email=Irving6@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Account Updated Successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- updateAccount -->
+        <test-method signature="deleteAccount(java.util.Map)[pri:2, instance:com.automationexercise.specification.TestCasesForApi@22fcf7ab]" started-at="2022-06-24T00:45:07 IST" name="deleteAccount" data-provider="getdeleteFormParamsMap" finished-at="2022-06-24T00:45:08 IST" duration-ms="371" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=testuser, email=Irving6@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Account Deleted Successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- deleteAccount -->
+      </class> <!-- com.automationexercise.specification.TestCasesForApi -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

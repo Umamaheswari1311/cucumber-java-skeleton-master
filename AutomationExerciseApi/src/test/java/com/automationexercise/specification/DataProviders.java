@@ -1,24 +1,21 @@
-package testbase;
+package com.automationexercise.specification;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import org.testng.annotations.DataProvider;
 import com.github.javafaker.Faker;
 
-public class TestBase {
 
-	Faker faker = new Faker();
-	public static String base_Url="https://automationexercise.com/api";
-	public static String post_url_Path="/createAccount";
-	public static String put_Url_Path="/updateAccount";
-	public static String Delet_Url_Path="/deleteAccount";
-	String fname= faker.name().firstName();
-	String lname=faker.name().lastName();
-	String pwd="testuser";
-	String mail=fname+faker.number().randomDigit()+"@gmail.com";
-	
-	public Map<String, String> getFormParamsMap() {
-		  Map<String, String> formParams = new HashMap<String, String>();
+public class DataProviders {
+
+	static Faker faker = new Faker();
+	static String fname= faker.name().firstName();
+	static String lname=faker.name().lastName();
+	static String pwd="testuser";
+	static String mail=fname+faker.number().randomDigit()+"@gmail.com";
+	@DataProvider
+	public static Object[][] getFormParamsMap() {
+		Map<String,Object> formParams = new HashMap<String,Object>();
 		   
 		    formParams.put("name", fname);
 		    formParams.put("email", mail);
@@ -37,11 +34,13 @@ public class TestBase {
 		    formParams.put("birth_date",faker.number().digits(1));
 		    formParams.put("birth_month",faker.number().digits(1) );
 		    formParams.put("birth_year",faker.number().digits(4));
-		    return formParams;
+		    return new Object[][] {{formParams},
+			};
 		}
 	
-	public Map<String, String> getUpdateFormParamsMap() {
-		  Map<String, String> formParams = new HashMap<String, String>();		   
+	@DataProvider
+	public Object[][]  getUpdateFormParamsMap() {
+		  Map<String, Object> formParams = new HashMap<String, Object>();		   
 		    formParams.put("name", fname);
 		    formParams.put("email",mail );
 		    formParams.put("password", pwd);
@@ -59,12 +58,14 @@ public class TestBase {
 		    formParams.put("birth_date",faker.number().digits(1));
 		    formParams.put("birth_month",faker.number().digits(1) );
 		    formParams.put("birth_year",faker.number().digits(4));
-		    return formParams;
+		    return new Object[][] {{formParams}};
 		}
-	public Map<String, String> getdeleteFormParamsMap() {
-		  Map<String, String> formParams = new HashMap<String, String>();		   		 
+	@DataProvider
+	public Object[][] getdeleteFormParamsMap() {
+		  Map<String, Object> formParams = new HashMap<String, Object>();		   		 
 		    formParams.put("email",mail );
 		    formParams.put("password", pwd);		   
-		    return formParams;
+		    return new Object[][] {{formParams}};
 		}
+	
 }

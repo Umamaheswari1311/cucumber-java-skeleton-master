@@ -3,11 +3,11 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testcases.TestCasesForApi">
+      <class name="com.automationexercise.specification.TestCasesForApi">
         <methods>
-          <include name="createAccount"/>
+          <include name="deleteAccount" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testcases.TestCasesForApi -->
+      </class> <!-- com.automationexercise.specification.TestCasesForApi -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

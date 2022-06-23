@@ -1,37 +1,30 @@
-package testcases;
+package com.automationexercise.specification;
 
-import java.io.File;
+
+import java.util.Map;
 
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
-import testbase.TestBase;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.equalTo;
-public class TestCasesForApi extends TestBase{
-	TestBase base=new TestBase();
+
+import io.restassured.response.Response;
+
+public class TestCasesForApi 
+{
+
+RequestSpecification spec=new RequestSpecification();
  Response response;
  String responseCode ;
  String msg;
  /*
   * Create User Account
   */
-@Test(priority=0)
-public void createAccount()
+@Test(priority=0,dataProviderClass=DataProviders.class,dataProvider="getFormParamsMap")
+public void createAccount(Map<String,Object> formParams)
 {
-
-	response= RestAssured
-			.given()
-			.baseUri(base_Url)
-			.basePath(post_url_Path)
-			.header("content-type", "application/x-www-form-urlencoded")
-			.formParams(base.getFormParamsMap())
-			.when()
-			.post();
-
+  
+  response= spec.postRequestWithFormParam(formParams);
 			response
 			.then()
 			.log()
@@ -47,21 +40,15 @@ public void createAccount()
     msg = response.jsonPath().getString("message");
    Assert.assertEquals(responseCode, "201");
    Assert.assertEquals(msg, "User created!");
+   Reporter.log("Account Created Successfully");
 }
 /*
  * Update User Account details
  */
-@Test(priority=1)
-public void updateAccount()
+@Test(priority=1,dataProviderClass=DataProviders.class,dataProvider="getUpdateFormParamsMap")
+public void updateAccount(Map<String,Object> formParams)
 {
-	response= RestAssured
-			.given()
-			.baseUri(base_Url)
-			.basePath(put_Url_Path)
-			.header("content-type", "application/x-www-form-urlencoded")
-			.formParams(base.getUpdateFormParamsMap())
-			.when()
-			.put();
+	response= spec.putRequestWithFormParam(formParams);
 			response
 			.then()
 			.log()
@@ -76,22 +63,16 @@ public void updateAccount()
 	 responseCode = response.jsonPath().getString("responseCode");
 	 msg = response.jsonPath().getString("message");
 	 Assert.assertEquals(responseCode, "200");
-	 Assert.assertEquals(msg, "User updated!");
+	 Assert.assertEquals(msg, "User updated!"); 
+	 Reporter.log("Account Updated Successfully");
 }
 /*
  * Delete User Account
  */
-@Test(priority=2)
-public void deleteAccount()
+@Test(priority=2,dataProviderClass=DataProviders.class,dataProvider="getdeleteFormParamsMap")
+public void deleteAccount(Map<String,Object> formParams)
 {
-	response= RestAssured
-			.given()
-			.baseUri(base_Url)
-			.basePath(Delet_Url_Path)
-			.header("content-type", "application/x-www-form-urlencoded")
-			.formParams(base.getdeleteFormParamsMap())
-			.when()
-			.delete();
+	response= spec.deleteRequestWithFormParam(formParams);
 			response
 			.then()
 			.log()
@@ -106,6 +87,7 @@ public void deleteAccount()
 	 responseCode = response.jsonPath().getString("responseCode");
 	 msg = response.jsonPath().getString("message");
 	 Assert.assertEquals(responseCode, "200");
-	 Assert.assertEquals(msg, "Account deleted!");
+	 Assert.assertEquals(msg, "Account deleted!"); 
+	 Reporter.log("Account Deleted Successfully");
 }
 }

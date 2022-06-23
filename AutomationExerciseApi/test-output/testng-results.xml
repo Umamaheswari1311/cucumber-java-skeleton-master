@@ -1,25 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[Account Created Successfully]]>
+    </line>
+    <line>
+      <![CDATA[Account Updated Successfully]]>
+    </line>
+    <line>
+      <![CDATA[Account Deleted Successfully]]>
+    </line>
   </reporter-output>
-  <suite started-at="2022-06-22T21:13:42 IST" name="Default suite" finished-at="2022-06-22T21:13:49 IST" duration-ms="7662">
+  <suite started-at="2022-06-24T00:46:15 IST" name="Default suite" finished-at="2022-06-24T00:46:22 IST" duration-ms="7603">
     <groups>
     </groups>
-    <test started-at="2022-06-22T21:13:42 IST" name="Default test" finished-at="2022-06-22T21:13:49 IST" duration-ms="7662">
-      <class name="testcases.TestCasesForApi">
-        <test-method signature="createAccount()[pri:0, instance:testcases.TestCasesForApi@1fb2eec]" started-at="2022-06-22T21:13:42 IST" name="createAccount" finished-at="2022-06-22T21:13:47 IST" duration-ms="5826" status="PASS">
+    <test started-at="2022-06-24T00:46:15 IST" name="Default test" finished-at="2022-06-24T00:46:22 IST" duration-ms="7603">
+      <class name="com.automationexercise.specification.TestCasesForApi">
+        <test-method signature="createAccount(java.util.Map)[pri:0, instance:com.automationexercise.specification.TestCasesForApi@4ef37659]" started-at="2022-06-24T00:46:15 IST" name="createAccount" data-provider="getFormParamsMap" finished-at="2022-06-24T00:46:21 IST" duration-ms="5691" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{country=India, firstname=Verona, address2=Yost Overpass, city=South Bonnyton, address1=6464 Tonette Stream, birth_month=9, birth_date=8, title=Mrs, lastname=Jenkins, birth_year=5962, zipcode=85270, password=testuser, name=Verona, company=abc, state=New Mexico, mobile_number=382.600.3483, email=Verona3@gmail.com}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
+            <line>
+              <![CDATA[Account Created Successfully]]>
+            </line>
           </reporter-output>
         </test-method> <!-- createAccount -->
-        <test-method signature="updateAccount()[pri:1, instance:testcases.TestCasesForApi@1fb2eec]" started-at="2022-06-22T21:13:47 IST" name="updateAccount" finished-at="2022-06-22T21:13:48 IST" duration-ms="926" status="PASS">
+        <test-method signature="updateAccount(java.util.Map)[pri:1, instance:com.automationexercise.specification.TestCasesForApi@4ef37659]" started-at="2022-06-24T00:46:21 IST" name="updateAccount" data-provider="getUpdateFormParamsMap" finished-at="2022-06-24T00:46:22 IST" duration-ms="909" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{country=Solomon Islands, firstname=Verona, address2=Reinaldo Row, city=Shanitaport, address1=4532 Marylee Forks, birth_month=1, birth_date=8, title=Mrs, lastname=Jenkins, birth_year=1464, zipcode=49501, password=testuser, name=Verona, company=abc, state=Maine, mobile_number=(319) 843-5889, email=Verona3@gmail.com}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
+            <line>
+              <![CDATA[Account Updated Successfully]]>
+            </line>
           </reporter-output>
         </test-method> <!-- updateAccount -->
-        <test-method signature="deleteAccount()[pri:2, instance:testcases.TestCasesForApi@1fb2eec]" started-at="2022-06-22T21:13:48 IST" name="deleteAccount" finished-at="2022-06-22T21:13:49 IST" duration-ms="835" status="PASS">
+        <test-method signature="deleteAccount(java.util.Map)[pri:2, instance:com.automationexercise.specification.TestCasesForApi@4ef37659]" started-at="2022-06-24T00:46:22 IST" name="deleteAccount" data-provider="getdeleteFormParamsMap" finished-at="2022-06-24T00:46:22 IST" duration-ms="458" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{password=testuser, email=Verona3@gmail.com}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
+            <line>
+              <![CDATA[Account Deleted Successfully]]>
+            </line>
           </reporter-output>
         </test-method> <!-- deleteAccount -->
-      </class> <!-- testcases.TestCasesForApi -->
+      </class> <!-- com.automationexercise.specification.TestCasesForApi -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
